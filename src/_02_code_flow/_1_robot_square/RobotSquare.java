@@ -4,57 +4,68 @@ package _02_code_flow._1_robot_square;
  *    Level 0
  */
 
+import java.awt.Color;
+
 import org.jointheleague.graphical.robot.Robot;
 
 // This recipe draws a square using the Robot
 
 public class RobotSquare {
-	
-    public static void main(String[] args){
- 
-    	// This code makes a new Robot
-    	Robot rob = new Robot();
 
-        // PEN.  Put the robot's pen down so it can draw, Use this command:
-		 /**     rob.penDown();    **/
+	public static void main(String[] args) {
 
-        // SPEED. Make the robot move quickly. Use this command:
-		  /**     rob.setSpeed();    **/
- 
-    	// COUNT. Create an int variable that will count how many sides of the square we have drawn.
-    	//        The start value will be zero because no sides have yet been drawn. Use this code:
-		  /**     int count = 0;    **/
-    	
+		// This code makes a new Robot
+		Robot rob = new Robot("batman");
+		rob.setPenColor(Color.red);
+		rob.penDown();
+		rob.setSpeed(5);
+		rob.move(250);
+		rob.turn(180);
+		rob.setPenColor(Color.black);
+		rob.move(250);
+		rob.setPenColor(Color.red);
+		rob.move(250);
+		rob.turn(90);
+		// PEN. Put the robot's pen down sob.penDown();o it can draw, Use this command:
+		/** r */
 
-        // DRAW.  Draw a line. Use this command:
-    		  /**     rob.move();    **/
-  
+		// SPEED. Make the robot move quickly. Use this command:
+		/** rob.setSpeed(); **/
+		rob.setSpeed(7);
+		// COUNT. Create an int variable that will count how many sides of the square we
+		// have drawn.
+		// The start value will be zero because no sides have yet been drawn. Use this
+		// code:
+		/** int count = 0; **/
+		int count = 0;
+		// DRAW. Draw a line. Use this command:
+		/** rob.move(); **/
 
-	// TURN.  Turn 90 degrees. Use this command:
-    		  /**     rob.turn();    **/
+		// Run the program. Did the Robot draw a line and turn?
 
-    	
-    	// INCREASE COUNT. Add one to the number of sides that have now been drawn like this:
-    		  /**     count += 1;    **/
+		// LOOP. Make a while loop and move the DRAW, TURN, and INCREASE COUNT code
+		// so it is between the curly braces like the example below.
+		// The code in the loop will now repeat 4 times to draw a square.
 
-    	
-    	// Run the program. Did the Robot draw a line and turn?
-    	 
-    	
-        // LOOP.  Make a while loop and move the DRAW, TURN, and INCREASE COUNT code 
-    	//        so it is between the curly braces like the example below. 
-    	//        The code in the loop will now repeat 4 times to draw a square.
-    	
-    	/**     while ( count < 4 ) { 
-    	 *            DRAW
-    	 *            TURN
-    	 *            INCREASE COUNT
-    	 *      }
-    	 **/
-    	
-    	
-    	// Run the program again. Did your Robot draw a square?
+		/**
+		 * while ( count < 4 ) { DRAW TURN INCREASE COUNT }
+		 **/
+		while (count < 4) {
+			rob.move(250);
 
+			// TURN. Turn 90 degrees. Use this command:
+			/** rob.turn(); **/
+			rob.turn(90);
 
-    }
+			// INCREASE COUNT. Add one to the number of sides that have now been drawn like
+			// this:
+			/** count += 1; **/
+			count += 1;
+
+		}
+
+		rob.penDown();
+		// Run the program again. Did your Robot draw a square?
+
+	}
 }
